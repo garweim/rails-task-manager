@@ -1,0 +1,17 @@
+<p>Gary <%= params[:id] %>er</p>
+<p class="boxed"><%= @task.details %></p>
+<div class= "inline-block">
+  <% if @task.completed? %>
+  <input class= "inline-block" type="checkbox" name="completed" checked>
+  <h3 class= "inline-block">Task completed!</h3>
+  <% else %>
+  <input class= "inline-block" type="checkbox" name="completed">
+  <h3 class= "inline-block">Task not completed!</h3>
+  <% end %>
+
+</div>
+<div>
+<%= link_to "edit task", task_edit_path(@task)%>
+<br>
+<%= link_to "return to tasks", tasks_path %>
+</div>
